@@ -61,7 +61,16 @@
     "no-promise-executor-return": "off",
     // type attribute of button element keeps bothering for no reason
     "react/button-has-type": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "consistent-return" : "warn",
+    "treact/jsx-props-no-spreading" : "off",
+    "no-var" : "off",
+    "vars-on-top" : "off",
+    "react/no-array-index-key" : "off",
+    "no-nested-ternary" : "off",
+    "react/jsx-props-no-spreading" : "off",
+    "no-useless-escape" : "warn",
+    "react/jsx-no-useless-fragment" : "warn"    
   },
   
 }

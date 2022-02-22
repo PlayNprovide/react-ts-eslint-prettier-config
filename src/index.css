@@ -1,0 +1,161 @@
+/* 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+
+/* 
+유니코드 범위
+영문 (대문자) : U+0041-005A
+영문 (소문자) : U+0061-007A
+숫자 : U+0030-0039
+한글 : U+AC00-U+D7A3
+*/
+
+
+/* @font-face {
+  font-family: "Noto Sans KR";
+  src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+  unicode-range: U+AC00-D7A3;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+} */
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg-dark1 : #23272a;
+    --color-bg-dark2 : #2c2f33;
+    --color-bg-dark3 : #18181b;
+    --color-bg-dark4 : #1f1f23;
+    --color-bg-dark5: #A0A0A0;
+
+    --color-bg-dark-offset1: #B0B0B0;
+
+    --color-bg-light1 : #ffffff;
+    --color-bg-light-offset1 : #f1f3f7;
+    --color-bg-light2 : #efeff1;
+
+    --color-text-light1 : #3a3c42;
+    --color-text-light-offset1: #898c94;
+
+    
+    --color-orange: #FF6347;
+    --color-green: #228B22;
+    --color-purple: #9665c4;
+    --color-red: #d92027;
+    --color-black: #000;
+    --color-white: #fff;
+   
+    --internal-light-dark: #f00;
+    --shadow-menu-light : 0 4px 8px rgba(0, 0, 0, 0.3);
+    --color-bg-desc-light : var(--color-black);
+    --color-desc-light : var(--color-white);
+    
+    --padding-large : 1rem; 
+    --padding-default : 0.5rem;
+    --padding-small : 0.25rem;
+    --padding-xsmall : 0.125rem;
+    --margin-default : 0.5rem;
+    --margin-small : 0.25rem;
+    --margin-xsmall : 0.125rem;
+    
+    --border-radius-default : 8px;
+    
+    --svg-size-default : 20px;
+    --svg-size-menu : 20px;
+    --svg-size-panel : 16px; 
+    --svg-size-nav : 16px;
+    --svg-size-option : 12px;
+    
+    --font-size-default : 1rem;
+    --font-size-small : 0.625rem;
+    --font-size-menu : 16px;
+    --font-size-after : 0.75rem;
+
+    --shadow-dropdown : 0 0px 10px rgb(64 64 64 / 15%);
+
+
+    --scroll-track-size-default : 10px;
+    --scroll-track-size-small : 5px;
+
+    --color-dark5 : #888;
+    --color-dark6: #555;
+
+
+  }
+}
+[data-theme="light"] {
+  --color-bg-primary: var(--color-bg-light1);
+  --color-bg-primary-offset: var(--color-bg-light-offset1);
+  --color-bg-secondary: var(--color-bg-light2);
+  --color-bg-secondary-offset: var(--color-bg-light-offset1);
+  --color-text-primary: var(--color-text-light1);
+  --color-text-primary-offset: var(--color-text-light-offset1);
+  
+  --color-menu-bg : var(--color-bg-dark1);
+  --color-option-logo : rgba(0, 0, 0, 0.2);
+
+  --shadow-popup : 0px 0px 1px 1px rgb(0 0 0 / 50%);
+  --shadow-elevation : 0 1px 2px rgba(0, 0, 0, 0.15);
+  --color-border-base : rgba(0, 0, 0, 0.1);
+  --color-border-cell : rgba(0, 0, 0, 0.3);
+
+  --color-scroll-thumb : var(--color-dark5);
+  --color-scroll-thumb-offset : var(--color-dark6);
+
+
+}
+[data-theme="dark"] {
+
+  --color-bg-primary: var(--color-bg-dark3);
+  --color-bg-primary-offset: var(--color-bg-dark-offset1);
+  --color-bg-secondary: var(--color-bg-dark2);
+  --color-bg-secondary-offset: var(--color-bg-dark-offset1);
+  --color-text-primary: #fff;
+  --color-text-primary-offset: var(--color-bg-light-offset1);
+
+  --color-menu-bg : var(--color-bg-dark1);
+  --color-option-logo : rgba(255, 255, 255, 0.2);
+
+  --shadow-popup : 0px 0px 1px 1px rgb(255 255 255 / 50%);
+  --shadow-elevation : 0 1px 2px rgba(0, 0, 0, 0.9);
+  --color-border-base : hsla(0, 0%, 100%, 0.1);
+  --color-border-cell : rgba(255, 255, 255, 0.3);
+
+  --shadow-elevation : 0 1px 2px rgba(0, 0, 0, 0.9), 0 0px 2px rgba(0, 0, 0, 0.9);
+  --color-scroll-thumb : var(--color-dark5);
+  --color-scroll-thumb-offset : var(--color-dark6);
+
+}
+
+html {
+  font-size: 16px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight : 100;
+  color : var(--color-text-primary)
+} 
+
+body {
+  display: flex;
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  display: flex;
+  flex :1;
+}
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
