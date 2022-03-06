@@ -16,7 +16,8 @@ module.exports = (env) => {
       index: path.resolve(__dirname, 'src/index.tsx')
     },
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'build'),
+      publicPath: '/',
       filename: '[name]-[contenthash].js'
     },
 
@@ -46,6 +47,17 @@ module.exports = (env) => {
     module: {
       rules: [
         {
+          test: /\.m?jsx?/,
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread']
+            }
+          }
+        },
+        {
           test: /\.(ts|tsx)$/i,
           loader: 'ts-loader',
           exclude: ['/node_modules/']
@@ -73,7 +85,7 @@ module.exports = (env) => {
       ]
     },
     resolve: {
-      extensions: ['.tsx', '.ts', '.js'],
+      extensions: ['.tsx', '.ts', '.js', '.jsx'],
       modules: ['src', 'node_modules'],
       alias: {
         '@Home': path.resolve(__dirname, 'src/views/home/'),
@@ -101,9 +113,7 @@ module.exports = (env) => {
           nm: {
             test: /[/\\]node_modules[/\\]/,
             name: (module, chunks, cacheGroupKey) => {
-              const packageName = module.context
-                .match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
-                .replace('@', '')
+              const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1].replace('@', '')
               return `${cacheGroupKey}-${packageName}`
             }
           }
